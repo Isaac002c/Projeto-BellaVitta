@@ -1,0 +1,231 @@
+:root {
+    --verde: #046307;
+    --bege: #f5eedc;
+    --bordo: #7b2a2a;
+    --preto: #1a1a1a;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: var(--bege);
+    color: var(--preto);
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background-color: var(--verde);
+    padding: 1rem;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;             
+    justify-content: center;   
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+}
+
+.navbar li {
+    text-align: center;
+}
+
+.navbar a {
+    color: var(--bege);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+    display: block;          
+    text-align: center;
+}
+
+.navbar a:hover {
+    color: var(--bordo);
+}
+
+/* Hero */
+.hero {
+    position: relative;
+    height: 200px;
+    background: url('./img/hero.jpg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-text {
+    color: white;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+.hero-text h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+.hero-text p {
+    margin: 5px 0 0 0;
+}
+
+.menu {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.menu h2 {
+    color: var(--bordo);
+    border-bottom: 2px solid var(--verde);
+    display: inline-block;
+    padding-bottom: 5px;
+    margin-bottom: 2rem;
+}
+
+.pratos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* responsivo automático */
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.menu-completo {
+    background-color: #fff;
+    border: 1px solid var(--verde);
+    border-radius: 10px;
+    padding: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.menu-completo img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.menu-completo h4 {
+    margin-top: 10px;
+    color: var(--preto);
+}
+
+.menu-completo .descricao,
+.menu-completo .preco {
+    display: block;
+    text-align: left;
+    margin-top: 10px;
+}
+
+/* efeito no menu */
+.menu-completo:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Footer */
+footer {
+    background-color: var(--bordo);
+    color: var(--bege);
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* responsividade no mobile com media*/
+@media (max-width: 900px) {
+    .pratos {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero {
+        height: 150px;
+    }
+
+    .hero-text h1 {
+        font-size: 1.5rem;
+    }
+
+    .pratos {
+        grid-template-columns: 1fr; 
+        gap: 15px;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+}
+
+/* Teste para saltar menu */
+
+.menu-completo.ativo {
+  transform: scale(1.08);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.35);
+  border-color: var(--bordo);
+  background-color: #fffdf7;
+  transition: all 0.3s ease;
+}
+
+.descricao-extra {
+  margin-top: 12px;
+  font-size: 0.95rem;
+  color: #333;
+  line-height: 1.4;
+}
+
+.preco-extra {
+  display: block;
+  margin-top: 8px;
+  font-weight: 700;
+  color: var(--bordo);
+}
+
+/* tentiva de adicionar o btn ver mais*/
+.btn-vermais {
+  background-color: var(--bordo);
+  color: var(--bege);
+  border: none;
+  border-radius: 8px;
+  padding: 8px 12px;
+  margin-top: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.btn-vermais:hover {
+  background-color: var(--verde);
+  color: #fff;
+}
+
+/* quando o menu estiver ativo realmente */
+.menu-completo.ativo {
+  transform: scale(1.08);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.35);
+  border-color: var(--bordo);
+  background-color: #fffdf7;
+  transition: all 0.3s ease;
+}
+
+.descricao-extra {
+  margin-top: 12px;
+  font-size: 0.95rem;
+  color: #333;
+  line-height: 1.4;
+}
+
+.preco-extra {
+  display: block;
+  margin-top: 8px;
+  font-weight: 700;
+  color: var(--bordo);
+}

@@ -1,0 +1,176 @@
+:root {
+  --verde: #2e7d32;
+  --bege: #fff7e6;
+  --bordo: #6d1b1b;
+  --preto: #1a1a1a;
+  --sombra: rgba(0, 0, 0, 0.15);
+  --raio: 1rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: var(--bege);
+  color: var(--bordo);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* NAVBAR */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--verde);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0.3rem 1rem var(--sombra);
+  z-index: 1000;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 3rem;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: var(--bege);
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: 0.3s;
+}
+
+.navbar a:hover {
+  color: #ffffff;
+}
+
+/* CONTAINER */
+
+main {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8rem 2rem 6rem; 
+}
+
+.container {
+  background: #ffffff;
+  padding: 3rem;
+  border-radius: var(--raio);
+  box-shadow: 0 0.8rem 2rem var(--sombra);
+  max-width: 40rem;
+  width: 100%;
+}
+
+.container h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+/* FORMULÁRIO */
+
+.cadastro-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.cadastro-form label {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.cadastro-form input {
+  padding: 0.8rem;
+  border: 0.1rem solid #ccc;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  outline: none;
+  transition: 0.2s;
+}
+
+.cadastro-form input:focus {
+  border-color: var(--verde);
+  box-shadow: 0 0 0.2rem var(--verde);
+}
+
+/* BOTÕES */
+
+.botoes {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.btn-enviar,
+.btn-apagar {
+  flex: 1;
+  padding: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+.btn-enviar {
+  background: var(--verde);
+  color: var(--bege);
+}
+
+.btn-enviar:hover {
+  background: #256428;
+}
+
+.btn-apagar {
+  background: var(--verde);
+  color: var(--bege);
+}
+
+.btn-apagar:hover {
+  background: #256428;
+}
+
+/* FOOTER */
+
+footer {
+  width: 100%;
+  text-align: center;
+  padding: 1.5rem;
+  background: var(--bordo);
+  color: var(--bege);
+  font-size: 0.9rem;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 768px) {
+  .navbar ul {
+    gap: 1.5rem;
+  }
+
+  .container {
+    padding: 2rem;
+  }
+
+  .container h1 {
+    font-size: 1.6rem;
+  }
+}

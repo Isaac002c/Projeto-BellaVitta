@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Não Encontrada - 404 Error</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .bounce-on-hover:hover {
+            animation: bounce 0.5s;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            20%,
+            53%,
+            80%,
+            100% {
+                animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+                transform: translate3d(0, 0, 0);
+            }
+
+            40%,
+            43% {
+                animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+                transform: translate3d(0, -10px, 0);
+            }
+
+            70% {
+                animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+                transform: translate3d(0, -5px, 0);
+            }
+
+            90% {
+                transform: translate3d(0, -2px, 0);
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gradient-to-br from-blue-100 to-purple-200 min-h-screen flex items-center justify-center p-4 fade-in">
+    <div class="max-w-lg mx-auto bg-white rounded-lg shadow-lg p-8 text-center space-y-6">
+        <div class="text-9xl font-bold text-gray-400">404</div>
+        <h1 class="text-3xl font-semibold text-gray-800">Ops! A página que você está procurando não existe.</h1>
+        <p class="text-gray-600">Parece que você se perdeu no espaço da internet. Não se preocupe, vamos te ajudar a
+            voltar ao caminho certo!</p>
+        <div class="relative">
+            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/5330793e-3b5c-41f8-abb5-5dd51afed424.png"
+                alt="Ilustração leve de um robô perdido em um universo digital com estrelas cintilantes ao fundo, tons azuis e roxos, estilo cartunesco com elementos futuristas como portas virtuais e uma placa de erro 404 piscando suavemente para representar confusão amigável"
+                class="w-full max-w-md mx-auto rounded-lg shadow-md" onerror="this.style.display='none';" />
+            <div class="absolute inset-0 flex items-center justify-center text-gray-500 text-sm" style="display:none;">
+                Imagem indisponível </div>
+        </div>
+        <div class="space-y-4">
+            <p class="text-lg font-medium text-gray-700">O que você pode fazer agora?</p>
+            <div class="space-x-4 flex flex-wrap justify-center gap-2">
+                <button onclick="goHome()"
+                    class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-md font-medium transition duration-300 bounce-on-hover">Voltar
+                    para a Página Inicial</button>
+                <button onclick="useSearch()"
+                    class="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-md font-medium transition duration-300 bounce-on-hover">Usar
+                    a Barra de Busca</button>
+                <button onclick="openMenu()"
+                    class="bg-purple-500 hover:bg-purple-600 text-white px-6 py-3 rounded-md font-medium transition duration-300 bounce-on-hover">Navegar
+                    pelo Menu Principal</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© Lumio — BellaVitta</p>
+    </footer>
+
+    <script>
+        function goHome() {
+            alert('Redirecionando para a página inicial... (Substitua por window.location.href em um site real)');
+            // window.location.href = '/home';
+        }
+
+        function useSearch() {
+            alert('Abrindo a barra de busca... (Substitua por função de busca em um site real)');
+            // document.getElementById('search-input').focus();
+        }
+
+        function openMenu() {
+            alert('Abrindo o menu principal... (Substitua por toggle de menu em um site real)');
+            // document.querySelector('.main-menu').classList.toggle('open');
+        }
+
+        // Adicionar um timer para mostrar a página suavemente
+        document.addEventListener('DOMContentLoaded', function () {
+            document.body.classList.add('fade-in');
+        });
+    </script>
+</body>
+
+</html>
+</content>
+</create_file>

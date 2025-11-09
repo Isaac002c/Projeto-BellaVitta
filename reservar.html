@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserva de Mesas - Restaurante</title>
+    <link rel="stylesheet" href="css/estilo_reserva.css">
+</head>
+
+<body>
+
+    <!-- navbar -->
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Cardapio.html">Cardápio</a></li>
+            <li><a href="Cadastro.html">Cadastro</a></li>
+            <li><a href="Comunicado.html">Comunicado</a></li>
+            <li><a href="Pedidos.html">Pedidos</a></li>
+            <li><a href="reservar.html">Reservas</a></li>
+            <li><a href="Entre_em_contato.html">Contato</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="container">
+            <h1>Reserva de Mesas</h1>
+
+            <!-- lugares -->
+
+            <div class="mapa" id="mapa">
+                <div class="mesa" data-mesa="1">1</div>
+                <div class="mesa" data-mesa="2">2</div>
+                <div class="mesa" data-mesa="3">3</div>
+                <div class="mesa" data-mesa="4">4</div>
+                <div class="mesa" data-mesa="5">5</div>
+                <div class="mesa" data-mesa="6">6</div>
+                <div class="mesa" data-mesa="7">7</div>
+                <div class="mesa" data-mesa="8">8</div>
+                <div class="mesa" data-mesa="9">9</div>
+                <div class="mesa" data-mesa="10">10</div>
+                <div class="mesa" data-mesa="11">11</div>
+                <div class="mesa" data-mesa="12">12</div>
+            </div>
+
+            <!-- formulário -->
+
+            <form id="formReserva">
+                <label for="nome">Nome completo:</label>
+                <input type="text" id="nome" name="nome" required placeholder="Digite seu nome completo">
+
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required placeholder="exemplo@dominio.com">
+
+                <label for="telefone">Telefone:</label>
+                <input type="tel" id="telefone" name="telefone" required placeholder="(00) 00000-0000">
+
+                <label for="pessoas">Quantidade de pessoas:</label>
+                <select id="pessoas" name="pessoas" required>
+                    <option value="">Selecione</option>
+                    <option value="1">1 pessoa</option>
+                    <option value="2">2 pessoas</option>
+                    <option value="3">3 pessoas</option>
+                    <option value="4">4 pessoas</option>
+                    <option value="5">5 pessoas</option>
+                    <option value="6">6 pessoas</option>
+                    <option value="7">7 pessoas</option>
+                    <option value="8">8 pessoas</option>
+                    <option value="9">9 pessoas</option>
+                    <option value="10">10 pessoas</option>
+                    <option value="11">11 pessoas</option>
+                    <option value="12">Obs. na caixa de mensagem</option>
+                </select>
+
+                <label for="data">Data da reserva:</label>
+                <input type="date" id="data" name="data" required>
+
+                <label for="assunto">Assunto:</label>
+                <input type="text" id="assunto" name="assunto" required placeholder="Informe o assunto da reserva">
+
+                <label for="mensagem">Mensagem:</label>
+                <textarea id="mensagem" name="mensagem" required
+                    placeholder="Digite detalhes da sua reserva..."></textarea>
+
+                <div class="botoes">
+                    <button type="submit" id="enviar">Enviar</button>
+                    <button type="reset" id="apagar">Apagar</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- footer -->
+
+    <footer>
+        <p>© Lumio — BellaVitta</p>
+    </footer>
+
+    <script>
+
+        // escolher a mesa
+
+        const mesas = document.querySelectorAll('.mesa');
+        let mesaSelecionada = null;
+
+        mesas.forEach(mesa => {
+            mesa.addEventListener('click', () => {
+                mesas.forEach(m => m.classList.remove('selecionada'));
+                mesa.classList.add('selecionada');
+                mesaSelecionada = mesa.dataset.mesa;
+            });
+        });
+
+        //    validação formulário
+        const form = document.getElementById('formReserva');
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+
+            const email = document.getElementById("email").value;
+            if (!email.includes("@")) {
+                alert("O e-mail deve conter o símbolo '@'.");
+                return;
+            }
+
+            if (!mesaSelecionada) {
+                alert("Por favor, selecione uma mesa antes de enviar a reserva.");
+                return;
+            }
+
+            alert(`Reserva enviada com sucesso!\nMesa: ${mesaSelecionada}`);
+            form.reset();
+            mesas.forEach(m => m.classList.remove('selecionada'));
+            mesaSelecionada = null;
+        });
+    </script>
+</body>
+
+<

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pedidos - Bella Vitta</title>
+  <link rel="stylesheet" href="./css/pedidos.css" />
+</head>
+
+<body>
+  <header class="navbar">
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="Cardapio.html">Cardápio</a></li>
+        <li><a href="Cadastro.html">Cadastro</a></li>
+        <li><a href="Comunicado.html">Comunicado</a></li>
+        <li><a href="Pedidos.html" class="ativo">Pedidos</a></li>
+        <li><a href="reservar.html">Reservas</a></li>
+        <li><a href="Entre_em_contato.html">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="produtos">
+      <h1>Monte seu Pedido</h1>
+      <div class="cards">
+        <div class="card">
+          <img src="./img/massa1.jpg" alt="Massa Bella Vitta">
+          <h2>Massa Bella Vitta</h2>
+          <p>Molho artesanal com ervas e parmesão fresco.</p>
+          <span class="preco">R$ 38,00</span>
+          <button class="add-carrinho" data-nome="Massa Bella Vitta" data-preco="38">Adicionar</button>
+        </div>
+
+        <div class="card">
+          <img src="./img/salada1.jpg" alt="Salada Toscana">
+          <h2>Salada Toscana</h2>
+          <p>Mix de folhas, tomate seco e lascas de parmesão.</p>
+          <span class="preco">R$ 26,00</span>
+          <button class="add-carrinho" data-nome="Salada Toscana" data-preco="26">Adicionar</button>
+        </div>
+
+        <div class="card">
+          <img src="./img/vinho1.jpg" alt="Vinho Tinto Reserva">
+          <h2>Vinho Tinto Reserva</h2>
+          <p>Notas de frutas vermelhas e taninos aveludados.</p>
+          <span class="preco">R$ 89,00</span>
+          <button class="add-carrinho" data-nome="Vinho Tinto Reserva" data-preco="89">Adicionar</button>
+        </div>
+      </div>
+    </section>
+
+    <aside class="carrinho">
+      <h2>Seu Pedido</h2>
+      <ul id="lista-carrinho"></ul>
+      <p class="total">Total: R$ <span id="total">0,00</span></p>
+      <button class="finalizar">Finalizar Pedido</button>
+    </aside>
+  </main>
+
+  <footer>
+    <p>© Lumio — Bella Vitta</p>
+  </footer>
+
+  <script>
+    const botoes = document.querySelectorAll('.add-carrinho');
+    const lista = document.getElementById('lista-carrinho');
+    const totalSpan = document.getElementById('total');
+    let total = 0;
+
+    botoes.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const nome = btn.dataset.nome;
+        const preco = parseFloat(btn.dataset.preco);
+
+        const item = document.createElement('li');
+        item.textContent = `${nome} — R$ ${preco.toFixed(2)}`;
+        lista.appendChild(item);
+
+        total += preco;
+        totalSpan.textContent = total.toFixed(2);
+      });
+    });
+  </script>
+</body>
+
+</html>
+

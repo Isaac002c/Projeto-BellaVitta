@@ -1,0 +1,190 @@
+:root {
+  --verde: #046307;
+  --bege: #f5eedc;
+  --bordo: #7b2a2a;
+  --preto: #1a1a1a;
+}
+
+/* body */
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--bege);
+  color: var(--preto);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* navbar */
+
+.navbar {
+  width: 100%;
+  background-color: var(--verde);
+  padding: 15px 0;
+  position: fixed; 
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: var(--bege);
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+/* container */
+
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+
+
+.container {
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  padding: 2rem;
+  max-width: 35rem;
+  width: 100%;
+  margin: 100px auto 80px auto;
+
+}
+
+/* title */
+
+h1 {
+  text-align: center;
+  color: var(--bordo);
+  margin-bottom: 20px;
+}
+
+/* formatação formulário */
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #444;
+}
+
+input,
+select,
+textarea {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-top: 5px;
+  font-size: 1em;
+  transition: border 0.3s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border: 1px solid var(--verde);
+  outline: none;
+}
+
+textarea {
+  resize: none;
+  height: 100px;
+}
+
+/* botões */
+
+.botoes {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+button {
+  flex: 1;
+  margin: 0 5px;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+#enviar {
+    background-color: var(--verde);
+    color: var(--bege);
+}
+
+#enviar:hover {
+    background-color: var(--h-verde);
+}
+
+#apagar {
+    background-color: var(--verde);
+    color: var(--bege);
+}
+
+#apagar:hover {
+    background-color: var(--h-verde);
+}
+
+/* footer */
+
+footer {
+  background-color: var(--bordo);
+  color: var(--bege);
+  text-align: center;
+  padding: 20px 0;
+  width: 100%;
+  margin-top: auto;
+}
+
+/* responsividade */
+
+@media (max-width: 600px) {
+  .container {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 1.4em;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .botoes {
+    flex-direction: column;
+  }
+
+  button {
+    margin: 5px 0;
+  }
+}
